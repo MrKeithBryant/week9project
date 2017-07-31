@@ -5,6 +5,7 @@ export default class PlayListItem extends Component {
      const {song} = this.props;
      console.log(song);
      return (
+        <div className='listItem'>
          <tbody>
          <tr>
          <td>
@@ -15,5 +16,6 @@ export default class PlayListItem extends Component {
          </td>
          </tr>
          </tbody>
+        </div>
   )}
 }

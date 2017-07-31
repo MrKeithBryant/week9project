@@ -33,11 +33,13 @@ componentDidMount() {
 
 
     return (
-            <div className='song table'>
+            <div className='col-md-6'>
             <table className='table'>
             <thead>
             <tr>
-            <th>Playlist:</th>
+            <tr>
+            <button className='updatelist' type='Submit'>Update List</button>
+            </tr>
             </tr>
             </thead>
             {songs.slice(0, 3).map(song => <PlayListItem song={song} key={song.id} />)}

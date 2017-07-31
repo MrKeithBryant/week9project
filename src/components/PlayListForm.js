@@ -49,7 +49,8 @@ export default class PlayListForm extends React.Component {
         {userName, songArtist, songTitle, songNotes} = this.state;
 
       return (
-        <div>
+        <div className='col-md-6'>
+        <div className="form-control">
         <form onSubmit={this.addToList}>
         <label htmlFor = 'username'>User name:</label>
         <input  type="text"
@@ -83,6 +84,7 @@ export default class PlayListForm extends React.Component {
 
 
         </form>
+        </div>
         </div>
       )
     }

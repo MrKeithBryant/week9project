@@ -1,14 +1,14 @@
 import React from 'react';
 
 export default class PlayListForm extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       username: '',
       songArtist: '',
       songTitle: '',
       songNotes: ''
-    }
+    };
   }
 
   handleChange = key => {
@@ -32,8 +32,8 @@ export default class PlayListForm extends React.Component {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
       }
-    }
-    ).then(response => {
+    })
+    .then(response => {
       console.log(response, "yay");
 
     }).catch(err => {
@@ -50,43 +50,30 @@ export default class PlayListForm extends React.Component {
 
       return (
         <div className='col-md-6'>
-        <div className="form-control">
-        <form onSubmit={this.addToList}>
-        <label htmlFor = 'username'>User name:</label>
-        <input  type="text"
-                className="form-control"
-                id="username"
-                placeholder="Name or User Name"
-                onChange = {this.handleChange('userName')}/>
+          <form onSubmit={this.addToList}>
+            <div className="form-list">
+              <label htmlFor='username'>User name:</label>
+                <input type="text" onChange={this.handleChange('userName')} value={userName} name='userName' className='form-control' />
+        </div>
 
-                <label htmlFor = 'songArtist'>Artist/Band:</label>
-                <input type="text"
-                       className="form-control"
-                       id="songArtist"
-                       placeholder="Artist or Band Name"
-                       onChange = {this.handleChange('songArtist')}/>
+        <div className='form-list'>
+          <label htmlFor='songArtist'>Artist/Band:</label>
+            <input type='text' onChange={this.handleChange('songArtist')} value={songArtist} name='songArtist' className='form-control' />
+        </div>
 
-                      <label htmlFor = 'songTitle'>Song Title:</label>
-                      <input type="text"
-                             className="form-control"
-                             id="songTitle"
-                             placeholder="Song Title"
-                             onChange = {this.handleChange('songTitle')}/>
+          <div className='form-list'>
+            <label htmlFor='songTitle'>Song Title:</label>
+              <input type="text" onChange={this.handleChange('songTitle')} vallue={songTitle} name='songTitle' className='form-control' />
+          </div>
 
-                            <label htmlFor = 'songNotes'>Notes about Song:</label>
-                            <input type="text"
-                                   className="form-control"
-                                   id='songNotes'
-                                   onChange = {this.handleChange('songNotes')}/>
+          <div className='form-list'>
+            <label htmlFor='songNotes'>Notes:</label>
+              <textarea type='text' onChange={this.handleChange('songNotes')} value={songNotes} name='songNotes' className='area-control' rows='5' columns='3' />
+          </div>
 
-                            <input type='submit' />
-
-
-
+          <input type='submit' className='btn btn-primary' />
         </form>
-        </div>
-        </div>
-      )
-    }
+      </div>
+    )
+  }
 }
-//userName, songArtist, songTitle, and songNotes

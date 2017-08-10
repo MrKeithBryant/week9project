@@ -23,14 +23,9 @@ nav {
 
 tr {
   background-color: #75aaf4;
-}
+  width: 30vh;
+  height: 10vh;
 
-
-
-.updatelist {
-  color: white;
-  background-color: #44bf4a;
-  margin-bottom: 20px;
 }
 
 
@@ -57,10 +52,7 @@ tr {
 .form-control {
   margin-top: 5px;
   margin-bottom: 15px;
-  background-color: #3b4047;
-  color: white;
-  border: none;
-}
+  }
 
 #songArtist, #username, #songTitle, #songNotes {
   background-color: white;
